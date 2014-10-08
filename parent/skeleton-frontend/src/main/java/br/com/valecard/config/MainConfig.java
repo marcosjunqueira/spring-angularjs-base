@@ -42,7 +42,15 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories(basePackages = "br.com.valecard.repositories")
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"br.com.valecard.repositories", "br.com.valecard.repositories.events", "br.com.valecard.controllers", "br.com.valecard.services", "br.com.valecard.listeners", "br.com.valecard.services.security.impl"}, excludeFilters = {
+@ComponentScan(basePackages = {
+    "br.com.valecard.controllers",
+    "br.com.valecard.services",
+    "br.com.valecard.services.security.impl",
+    "br.com.valecard.repositories",
+    "br.com.valecard.repositories.events",
+    "br.com.valecard.listeners",
+    "br.com.valecard.context.event"
+}, excludeFilters = {
     @ComponentScan.Filter(Configuration.class)})
 @PropertySource("classpath:application.properties")
 @Import(RepositoryRestMvcConfiguration.class)
@@ -55,6 +63,7 @@ public class MainConfig extends RepositoryRestMvcConfiguration {
     public DataSource dataSource() {
         //Abaixo está configurado para obter propriedades do sistema que podem 
         //ser passadas via opção -Dprop=value do java
+        //entretando pode ser configurado de diversas maneiras
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getProperty("database.driverClassName"));
         String url = environment.getProperty("MYSQL_URL_AGENDOO");
