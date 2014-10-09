@@ -235,7 +235,7 @@
 	<local-check-config name="algarcrm-checkstyle" location="/build-tools/src/main/resources/config/checkstyle.xml" type="project" description="">
 		<additional-data name="protect-config-file" value="false" />
 	</local-check-config>
-        <local-check-config name="Checkstyle Algar Way" location="http://10.51.25.151:9000/sonar/profiles/export?format=checkstyle&amp;language=java&amp;name=Algar%2520way" type="remote" description="">
+        <local-check-config name="Checkstyle Algar Way" location="http://localhost:9000/profiles/export?format=checkstyle&amp;language=java&amp;name=Sonar%2520way" type="remote" description="">
                 <additional-data name="cache-file" value="false" />
         </local-check-config>
 	<fileset name="all" enabled="true" check-config-name="Checkstyle Algar Way" local="true">
@@ -256,10 +256,9 @@
                 <plugin>
                     <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
                     <artifactId>maven-java-formatter-plugin</artifactId>
-                    <version>0.3.1</version>
+                    <version>0.4</version>
                     <executions>
                         <execution>
-                            <phase>process-sources</phase>
                             <goals>
                                 <goal>format</goal>
                             </goals>
@@ -285,7 +284,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <configLocation>${main.basedir}/config/checkstyle.xml</configLocation>
+                        <configLocation>config/sun_checks.xml</configLocation>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <consoleOutput>true</consoleOutput>
                         <failsOnError>true</failsOnError>
