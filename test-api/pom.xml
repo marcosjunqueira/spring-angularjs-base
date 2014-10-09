@@ -9,6 +9,10 @@
     <artifactId>test-api</artifactId>
     <packaging>jar</packaging>
     <name>Valecard Test API</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>

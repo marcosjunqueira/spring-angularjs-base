@@ -8,6 +8,11 @@
     </parent>
     <artifactId>dentalshow-api</artifactId>
     <packaging>jar</packaging>
+    <name>Dentalshow API</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -21,5 +26,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <name>Dentalshow API</name>
 </project>
