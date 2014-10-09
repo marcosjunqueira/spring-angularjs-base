@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>This ruleset checks my code for bad stuff</description>
+
+
+    <!--
+        A grab bag of rules that most developers are unlikely to disagree with: catch blocks
+        shouldn't be empty, override hashCode() anytime you override equals(), etc.
+    -->
+    <rule ref="rulesets/java/basic.xml" />
+    
+    <!--
+        Tests for the standard Java naming conventions: variable names should not be too short;
+        method names should not be too long; class names should begin with an uppercase letter,
+        method and field names should begin with a lowercase letter, etc.
+    -->
+    <rule ref="rulesets/java/naming.xml">
+        <exclude name="BooleanGetMethodName" />
+        <exclude name="ShortVariable"/>
+        <exclude name="LongVariable"/>
+    </rule>
+
+    <!--The Braces Ruleset contains a collection of braces rules.
+	-->
+    <rule ref="rulesets/java/braces.xml" />
+
+    <!--
+        Tests for overly long methods, classes with too many methods, and similar candidates for
+        refactoring.
+    -->
+    <rule ref="rulesets/java/codesize.xml">
+        <exclude name="ExcessiveClassLength" />
+        <exclude name="ExcessivePublicCount" />
+        <exclude name="TooManyFields" />
+        <exclude name="TooManyMethods" />
+    </rule>
+
+    <!--
+		The Design Ruleset contains a collection of rules that find questionable designs.	
+	-->
+    <rule ref="rulesets/java/design.xml">
+        <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal" />
+    </rule>
+
+    <!--
+        These rules deal with different problems that can occur with manipulation of the class
+        String or StringBuffer.
+    -->
+    <rule ref="rulesets/java/strings.xml/StringToString" />
+
+</ruleset>
