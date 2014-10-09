@@ -11,7 +11,7 @@ package br.com.valecard.events;
 import org.springframework.context.ApplicationEvent;
 
 /**
- *
+ * 
  * @author Marcos O. Junqueira <marcos.junqueira at gmail.com>
  */
 public class SendMailEvent extends ApplicationEvent {
@@ -19,22 +19,23 @@ public class SendMailEvent extends ApplicationEvent {
     private String property;
 
     public SendMailEvent(String property, Object source) {
-        super(source);
-        this.property = property;
+	super(source);
+	this.property = property;
     }
 
     /**
      * @return the property
      */
     public String getProperty() {
-        return property;
+	return property;
     }
 
     /**
-     * @param property the property to set
+     * @param property
+     *            the property to set
      */
     public void setProperty(String property) {
-        this.property = property;
+	this.property = property;
     }
 
 }
